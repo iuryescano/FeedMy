@@ -13,7 +13,10 @@ export function Comment({ content, onDeleteComment }) {
   }
 
   function handleLikeComment(){
-    setLikeCount(likeCount + 1);
+    /* setLikeCount(likeCount + 1); //uma possibilidade de uso*/
+    setLikeCount((state) => { //o ideal a se fazer
+      return state + 1;
+    });
   }
 
   return (
